@@ -37,25 +37,30 @@ const products = [
 const list = document.getElementById("lista-de-productos");
 const input = document.querySelector(".input");
 
-for (let i = 0; i < products.length; i++) {
-  //cambio nombre de variable
-  const container = document.createElement("div");
-  container.classList.add("producto");
-  //cmabio a nombre descriptivo de la variable title
-  const title = document.createElement("p");
-  title.classList.add("titulo");
-  title.textContent = products[i].nombre;
+//Se envuelve el ciclo for de los productos en una arrow function
+const displayProducts = (products) => {
+  for (let i = 0; i < products.length; i++) {
+    //cambio nombre de variable
+    const container = document.createElement("div");
+    container.classList.add("producto");
+    //cmabio a nombre descriptivo de la variable title
+    const title = document.createElement("p");
+    title.classList.add("titulo");
+    title.textContent = products[i].nombre;
 
-  const imagen = document.createElement("img");
-  imagen.setAttribute("src", products[i].img);
+    const imagen = document.createElement("img");
+    imagen.setAttribute("src", products[i].img);
 
-  container.appendChild(title);
-  container.appendChild(imagen);
+    container.appendChild(title);
+    container.appendChild(imagen);
 
-  list.appendChild(container);
-}
+    list.appendChild(container);
+  }
+  return;
+};
+
 //Faltaría definir lo que entiendo que es una función de displayProductos.
-displayProductos(products);
+displayProducts(products);
 
 //Se agrega el punto para que mi querySelector sea de clase
 //Se cambia la const a inglés
