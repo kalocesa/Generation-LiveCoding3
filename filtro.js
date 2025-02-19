@@ -34,59 +34,64 @@ const products = [
   },
 ];
 //Se le cambia el getElementsById para que busque ese selector.
-const list = document.getElementsById("lista-de-productos");
-const $i = document.querySelector(".input");
+const list = document.getElementById("lista-de-productos");
+const input = document.querySelector(".input");
 
-for (let i = 0; i < productos.length; i++) {
+for (let i = 0; i < products.length; i++) {
   //cambio nombre de variable
   const container = document.createElement("div");
   container.classList.add("producto");
   //cmabio a nombre descriptivo de la variable title
   const title = document.createElement("p");
   title.classList.add("titulo");
-  title.textContent = productos[i].nombre;
+  title.textContent = products[i].nombre;
 
-  var imagen = document.createElement("img");
-  imagen.setAttribute("src", productos[i].img);
+  const imagen = document.createElement("img");
+  imagen.setAttribute("src", products[i].img);
 
-  d.appendChild(ti);
-  d.appendChild(imagen);
+  container.appendChild(title);
+  container.appendChild(imagen);
 
-  list.appendChild(d);
+  list.appendChild(container);
 }
+//Faltaría definir lo que entiendo que es una función de displayProductos.
+displayProductos(products);
 
-displayProductos(productos);
-const botonDeFiltro = document.querySelector("button");
+//Se agrega el punto para que mi querySelector sea de clase
+//Se cambia la const a inglés
+const filterButton = document.querySelector(".button");
 
-botonDeFiltro.onclick = function () {
-  while (li.firstChild) {
-    li.removeChild(li.firstChild);
+filterButton.onclick = function () {
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
   }
 
-  const texto = $i.value;
-  console.log(texto);
-  const productosFiltrados = filtrado(productos, texto);
+  const text = input.value;
+  console.log(text);
+  //Se cambia el nombre de la variable a inglés
+  const filterProducts = filtering(products, text);
 
-  for (let i = 0; i < productosFiltrados.length; i++) {
-    var d = document.createElement("div");
-    d.classList.add("producto");
+  for (let i = 0; i < filterProducts.length; i++) {
+    //Se cambia el nombre de las variables a inglés y más descriptivas de acuerdo a la etiqueta que hacen referencia
+    const container = document.createElement("div");
+    container.classList.add("producto");
 
-    var ti = document.createElement("p");
-    ti.classList.add("titulo");
-    ti.textContent = productosFiltrados[i].nombre;
+    const title = document.createElement("p");
+    title.classList.add("titulo");
+    title.textContent = filterProducts[i].nombre;
 
-    var imagen = document.createElement("img");
-    imagen.setAttribute("src", productosFiltrados[i].img);
+    const imagen = document.createElement("img");
+    imagen.setAttribute("src", filterProducts[i].img);
 
-    d.appendChild(ti);
-    d.appendChild(imagen);
+    container.appendChild(title);
+    container.appendChild(imagen);
 
-    li.appendChild(d);
+    list.appendChild(container);
   }
 };
 
-const filtrado = (productos = [], texto) => {
-  return productos.filter(
-    (item) => item.tipo.includes(texto) || item.color.includes(texto)
+const filtering = (products = [], text) => {
+  return products.filter(
+    (item) => item.tipo.includes(text) || item.color.includes(text)
   );
 };
