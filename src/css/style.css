@@ -1,0 +1,66 @@
+/* Se agrega etiqueta body para el color de fondo */
+body {
+  background-color: #f5ebe0;
+}
+
+/* Se añaden estilos a etiqueta h1 del título de la página */
+h1 {
+  font-family: "Handlee", serif;
+  color: #bb8588;
+  font-size: 85px;
+}
+
+/* Se le quita el borde al input */
+input {
+  width: 500px;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+}
+
+/* Se cambia el nombre de la lista de productos a inglés */
+#listProducts {
+  display: flex;
+}
+
+/* Se añade etiqueta h2 para manejar estilos */
+h2 {
+  color: #bb8588;
+  font-size: 45px;
+}
+
+/* Se quita el borde negro de la tarjeta y se agrega un color de fondo */
+.product {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-color: #e3d5ca;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product img {
+  width: 70%;
+  height: auto;
+}
+
+/* Se añade clase para otorgar estilos al titulo de las tarjetas */
+.title {
+  font-family: "Handlee", serif;
+  font-weight: 500;
+  font-size: 20px;
+  padding-top: 10px;
+  color: #915a5c;
+}
+
+/* Se añade la clase del botón para manejar el color con bootstrap */
+.button {
+  color: white;
+  background-color: #bb8588;
+}
+
+/* Se añade hover a la clase button para que el color cambie al pasar el cursor o dar click */
+.button:hover {
+  background-color: #e3d5ca;
+}

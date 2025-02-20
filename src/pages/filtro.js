@@ -1,40 +1,41 @@
 // Tenemos un li de productos
 //Se mejora legibilidad del array de productos. Todos en columna
 //Le cambio el nombre al array en inglés
+//Ingresé las imagenes a la carpeta images
 const products = [
   {
-    nombre: "Zapato negro",
-    tipo: "zapato",
+    name: "Zapato negro",
+    type: "zapato",
     color: "negro",
-    img: "./taco-negro.jpg",
+    img: "./images/taco-negro.jpg",
   },
   {
-    nombre: "Zapato azul",
-    tipo: "zapato",
+    name: "Zapato azul",
+    type: "zapato",
     color: "azul",
-    img: "./taco-azul.jpg",
+    img: "./images/taco-azul.jpg",
   },
   {
-    nombre: "Bota negra",
-    tipo: "bota",
+    name: "Bota negra",
+    type: "bota",
     color: "negro",
-    img: "./bota-negra.jpg",
+    img: "./images/bota-negra.jpg",
   },
   {
-    nombre: "Bota azul",
-    tipo: "bota",
+    name: "Bota azul",
+    type: "bota",
     color: "azul",
-    img: "./bota-azul.jpg",
+    img: "./images/bota-azul.jpg",
   },
   {
-    nombre: "Zapato rojo",
-    tipo: "zapato",
+    name: "Zapato rojo",
+    type: "zapato",
     color: "rojo",
-    img: "./zapato-rojo.jpg",
+    img: "./images/zapato-rojo.jpg",
   },
 ];
 //Se le cambia el getElementsById para que busque ese selector.
-const list = document.getElementById("lista-de-productos");
+const list = document.getElementById("listProducts");
 const input = document.querySelector(".input");
 
 //Se envuelve el ciclo for de los productos en una arrow function
@@ -42,17 +43,17 @@ const displayProducts = (products) => {
   for (let i = 0; i < products.length; i++) {
     //cambio nombre de variable
     const container = document.createElement("div");
-    container.classList.add("producto");
+    container.classList.add("product");
     //cmabio a nombre descriptivo de la variable title
     const title = document.createElement("p");
-    title.classList.add("titulo");
-    title.textContent = products[i].nombre;
+    title.classList.add("title");
+    title.textContent = products[i].name;
 
-    const imagen = document.createElement("img");
-    imagen.setAttribute("src", products[i].img);
+    const image = document.createElement("img");
+    image.setAttribute("src", products[i].img);
 
     container.appendChild(title);
-    container.appendChild(imagen);
+    container.appendChild(image);
 
     list.appendChild(container);
   }
@@ -79,17 +80,17 @@ filterButton.onclick = function () {
   for (let i = 0; i < filterProducts.length; i++) {
     //Se cambia el nombre de las variables a inglés y más descriptivas de acuerdo a la etiqueta que hacen referencia
     const container = document.createElement("div");
-    container.classList.add("producto");
+    container.classList.add("product");
 
     const title = document.createElement("p");
-    title.classList.add("titulo");
-    title.textContent = filterProducts[i].nombre;
+    title.classList.add("title");
+    title.textContent = filterProducts[i].name;
 
-    const imagen = document.createElement("img");
-    imagen.setAttribute("src", filterProducts[i].img);
+    const image = document.createElement("img");
+    image.setAttribute("src", filterProducts[i].img);
 
     container.appendChild(title);
-    container.appendChild(imagen);
+    container.appendChild(image);
 
     list.appendChild(container);
   }
@@ -97,6 +98,6 @@ filterButton.onclick = function () {
 
 const filtering = (products = [], text) => {
   return products.filter(
-    (item) => item.tipo.includes(text) || item.color.includes(text)
+    (item) => item.type.includes(text) || item.color.includes(text)
   );
 };

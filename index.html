@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChicGlam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<!-- Se añade index para enlazar página y darle estilos y mejor visibilidad a la misma -->
+
+<body>
+    <header>
+        <h1 class="text-center pt-4">ChicGlam</h1>
+    </header>
+    <main>
+        <section>
+            <!-- Se crea un div para encerrar el input con el boton ya creados -->
+            <div class="d-flex justify-content-center">
+                <!-- Se añade la clase input al input -->
+                <!-- Se arregla el placeholder -->
+                <!-- Se añaden clases de bootstrap al input -->
+                <input class="input w-75 rounded-4" type="text" placeholder="Selecciona un color o tipo de zapato">
+                <!-- Se añade la clase button -->
+                <!-- Se agrega clase al boton con bootstrap -->
+                <button class="button btn">Filtrar</button>
+            </div>
+            <!-- Se le agregan clases de bootstrap al contenedor -->
+            <div class="d-flex flex-column justify-content-center">
+                <!-- Se cambia a un h2 -->
+                <!-- Se añade clase con bootstrap -->
+                <h2 class="p-5">Lista de productos</h2>
+                <!-- Se cambia el nombre del id -->
+                <!-- Se le añade clases con bootstrap -->
+                <div class="mx-auto" id="listProducts">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<script src="./src/pages/filtro.js"></script>
+
+</html>
