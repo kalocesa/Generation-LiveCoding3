@@ -101,3 +101,10 @@ const filtering = (products = [], text) => {
     (item) => item.type.includes(text) || item.color.includes(text)
   );
 };
+
+const resetButton = document.querySelector(".reset-button");
+
+resetButton.onclick = function () {
+  input.value = ""; // Limpiar el valor del input
+  displayProducts(products); // Mostrar productos originales
+};

@@ -58,6 +58,7 @@ h2 {
 .button {
   color: white;
   background-color: #bb8588;
+  margin: 10px;
 }
 
 /* Se añade hover a la clase button para que el color cambie al pasar el cursor o dar click */
